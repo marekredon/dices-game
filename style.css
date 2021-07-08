@@ -4,8 +4,12 @@
   font-weight: 400;
 }
 
-html, body {
+html, body, h1 {
   margin: 0;
+}
+
+h1 {
+  padding-top: 2em;
 }
 
 .header {
@@ -20,18 +24,13 @@ html, body {
 }
 
 main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
 }
 
 .player {
   width: 100vw;
-  height: 100vh;
-  background: #f7f7f7;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  height: 46vh;
+  background: #D394DB;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -41,99 +40,49 @@ main {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  text-align: center;
 }
 
 .player p {
-  font-size: 8vw;
-  font-weight: 100;
-  color: #f04c4c;
+  font-size: 3em;
+  font-weight: 500;
 }
 
 .player h2 {
-  font-size: 4vw;
-  font-weight: 100;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.player.non-active {
+  background-color: #e0e0e0;
 }
 
 .player .current {
   background-color: #f04c4c;
-  width: 12vw;
-  height: 9vw;
-  padding: 10px;
+  width: 20vw;
+  height: 100px;
+  margin-left: 40%;
 }
 
-.actions {
-  font-size: 1.2vw;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  position: absolute;
-  width: 30vw;
-  height: 92vh;
-  top: 0px;
-  left: 35%;
+.player .currentcurrentScoreOne {
+  margin: 0;
+  color: #e0e0e0;
 }
 
-.actions .action {
-  width: 50%;
-  margin: auto;
+.player .currentglobalScoreOne {
+  margin: 0;
 }
 
-.actions .action button {
-  letter-spacing: 0.2vw;
+#currentScoreOne {
+  margin: 0;
+  color: #e0e0e0;
 }
 
-.actions .action button i {
-  font-size: 1.5vw;
-  color: #f04c4c;
+#globalScoreOne {
+  margin: 0;
 }
 
-.actions .action .play-button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.actions .dice {
-  width: 12vw;
-  height: 12vw;
-  margin: auto;
-  background-image: url("../images/dice.svg");
-  background-position: center;
-  background-size: contain;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.actions .dice img {
-  width: 95%;
-  height: 95%;
-  margin: auto;
-}
-
-button {
+button, a {
   background: none;
   color: inherit;
   border: none;
@@ -142,5 +91,6 @@ button {
   cursor: pointer;
   outline: inherit;
   font-size: 2em;
+  text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */

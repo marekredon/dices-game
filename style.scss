@@ -1,18 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 
 //couleurs
-$lightgrey: #f7f7f7;
+$active: #D394DB;
 $darkgrey: #e0e0e0;
-$themeColor: #f04c4c;
+$current: #f04c4c;
 
 * {
   font-family: "Lato", sans-serif;
   font-weight: 400;
 }
 
-html, body {
+html, body, h1 {
   margin : 0
 }
+
+h1 {
+  padding-top: 2em;
+}
+
 
 .header {
   display: flex;
@@ -20,87 +25,56 @@ html, body {
   height: 6vh;
   padding-top: 1%;
   justify-content: space-around;
- 
 }
 
 main {
-  display: flex;
+  display: inline-block;
 }
 
 .player{
   width: 100vw;
-  height: 100vh;
-  background: $lightgrey;
-  display: flex;
+  height: 46vh;
+  background: $active;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  text-align: center;
   p{
-      font-size: 8vw;
-      font-weight: 100;
-      color: $themeColor;
+    font-size: 3em;
+    font-weight: 500;
   }
   h2{
-      font-size: 4vw;
-      font-weight: 100;
+    font-size: 1.2em;
+    font-weight: 500;
+  }
+  &.non-active{
+    background-color: $darkgrey;
   }
 }
 
 
 .player .current{
-  background-color: $themeColor;
-  width: 12vw;
-  height: 9vw;
-  padding: 10px;
-}
-
-
-.actions{
-  font-size: 1.2vw;
-  justify-content:center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  position: absolute;
-  width: 30vw;
-  height: 92vh;
-  top: 0px;
-  left: 35%;
-
-  .action{
-      width: 50%;
-      margin: auto;
-      button{
-          letter-spacing: 0.2vw;
-          i{
-              font-size: 1.5vw;
-              color: $themeColor;
-          }
-      }
-      .play-button{
-          display: flex;
-          flex-direction: column;
-      }
+  background-color: $current;
+  width: 20vw;
+  height: 100px;
+  margin-left: 40%;
+  &currentScoreOne {
+    margin: 0;
+    color: #e0e0e0;
+ }
+  &globalScoreOne{
+    margin: 0;
   }
-  .dice{
-      width: 12vw;
-      height: 12vw;
-      margin: auto;
-      background-image: url("../images/dice.svg");
-      background-position: center;
-      background-size:contain;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      img{
-          width: 95%;
-          height: 95%;
-          margin: auto;
-      }
-  }     
 }
-button {
+#currentScoreOne {
+  margin: 0;
+  color: #e0e0e0;
+}
+#globalScoreOne{
+  margin: 0;
+}
+
+button, a {
 	background: none;
 	color: inherit;
 	border: none;
@@ -109,4 +83,5 @@ button {
 	cursor: pointer;
 	outline: inherit;
   font-size: 2em;
+  text-decoration: none;
 } 

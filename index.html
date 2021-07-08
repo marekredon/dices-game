@@ -14,45 +14,34 @@
       
       <div class="header">
       <button type="button">NEW GAME &nbsp&nbsp<i class="fas fa-redo-alt fa-1x"></i></button>
-      <button type="button">RULES &nbsp&nbsp<i class="fab fa-readme fa-1x"></i></button>
-      
+      <a href="rules.html" button type="button">RULES &nbsp&nbsp<i class="fab fa-readme fa-1x"></i></button></a> 
+      <!-- <a href="rules.html" class="btn-marek">Revenir vers la page des jeux et événements</a> -->
       </div>
 
       <main>
         <!--player 1--> 
-        <div id="player1" class="player player-active">
+        <div id="player1" class="player active">
           <div>
-            <h2>PLAYER 1</h2>
+            <h1>PLAYER 1</h1>
             <p id="globalScoreOne">0</p>
           </div>
           <div class="current">
-            <h3>CURRENT</h3>
-            <p id="curentScoreOne">0</p>
+            <h2>CURRENT</h2>
+            <p id="currentScoreOne">0</p>
           </div>
         </div>
-
-        <!--player 2-->
-        <div id="player2" class="player">
+        <!--player 2--> 
+        <div id="player2" class="player non-active">
           <div>
-            <h2>PLAYER 2</h2>
-            <p id="globalScoreTwo">0</p>
+            <h1>PLAYER 2</h1>
+            <p id="globalScoreOne">0</p>
           </div>
-          <div class="current">            
-            <h3>CURRENT</h3>
-            <p id="curentScoreTwo">0</p>
-          </div>
-        </div>
-
-        <div class="actions">
-          <div class="action play-button">
-            <i class="far fa-play-circle fa-2x"></i>
-            <button type="button">ROLL DICE</button>
-            <i class="far fa-check-circle fa-2x"></i>
-            <button type="button">HOLD</button>
-            <!-- <i class="fas fa-dice fa-2x"></i> -->
+          <div class="current">
+            <h2>CURRENT</h2>
+            <p id="currentScoreOne">0</p>
           </div>
         </div>
-
+    
       </main>
       
       <script src="script.js"></script>
