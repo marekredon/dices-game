@@ -31,12 +31,12 @@ main {
 }
 
 .player{
-  width: 100vw;
+  width: 92vw;
   height: 46vh;
   background: $active;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: space-around;
   text-align: center;
   border: 4mm ridge rgba(170, 50, 220, .6);
   p{
@@ -48,8 +48,8 @@ main {
     font-weight: 500;
   }
   &.non-active{
-    background-color: $darkgrey;
-    border: none;
+    background: $darkgrey;
+    border: 4mm ridge rgba(256, 256, 256, .0);
   }
 }
 
@@ -57,7 +57,7 @@ main {
   background-color: $current;
   width: 20vw;
   height: 100px;
-  margin-left: 40%;
+  margin-left: 39.3%;
   margin-top: 1%;
   &currentScoreOne {
     margin: 0;
@@ -67,11 +67,11 @@ main {
     margin: 0;
   }
 }
-#currentScoreOne {
+#currentScoreOne, #currentScoreTwo {
   margin: 0;
   color: #e0e0e0;
 }
-#globalScoreOne{
+#globalScoreTwo, #globalScoreOne{
   margin: 0;
 }
 
@@ -86,3 +86,14 @@ button, a {
   font-size: 2em;
   text-decoration: none;
 } 
+
+aside {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media screen and (min-width: 705px) {
+  #player2.player.non-active {
+  display: inline-block;
+  }
+}
