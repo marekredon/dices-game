@@ -4,22 +4,56 @@
       <meta charset="utf-8">
       <title>dices game</title>
       <meta name="description" content="jeu de dés pour tout le monde" />
-      <meta name="robots" content="index, follow, max-snippet: -1, max-image-preview:large, max-video-preview: -1" />
-      <!-- voir aussi https://schema.org/docs/gs.html pour les microdonnées, google search console, 
-        voir micro.png pour microdonnées, et enfin https://developers.google.com/speed/pagespeed/insights/?hl=fr-->
       <!-- ligne ci-dessous pour le responsive -->
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <!-- <link rel="stylesheet" href="index.css" type="text/css" > -->
-      <link href="style.scss" rel="stylesheet" >
       <link href="style.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
-      <!-- <script src="https://kit.fontawesome.com/f7576231fa.js" crossorigin="anonymous"></script> -->
-      <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
+      <script src="https://kit.fontawesome.com/f7576231fa.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
-      <div class="container">
-        <h1>je suis bon</h1>
+      
+      <div class="header">
+      <button type="button">NEW GAME &nbsp&nbsp<i class="fas fa-redo-alt fa-1x"></i></button>
+      <button type="button">RULES &nbsp&nbsp<i class="fab fa-readme fa-1x"></i></button>
+      
       </div>
+
+      <main>
+        <!--player 1--> 
+        <div id="player1" class="player player-active">
+          <div>
+            <h2>PLAYER 1</h2>
+            <p id="globalScoreOne">0</p>
+          </div>
+          <div class="current">
+            <h3>CURRENT</h3>
+            <p id="curentScoreOne">0</p>
+          </div>
+        </div>
+
+        <!--player 2-->
+        <div id="player2" class="player">
+          <div>
+            <h2>PLAYER 2</h2>
+            <p id="globalScoreTwo">0</p>
+          </div>
+          <div class="current">            
+            <h3>CURRENT</h3>
+            <p id="curentScoreTwo">0</p>
+          </div>
+        </div>
+
+        <div class="actions">
+          <div class="action play-button">
+            <i class="far fa-play-circle fa-2x"></i>
+            <button type="button">ROLL DICE</button>
+            <i class="far fa-check-circle fa-2x"></i>
+            <button type="button">HOLD</button>
+            <!-- <i class="fas fa-dice fa-2x"></i> -->
+          </div>
+        </div>
+
+      </main>
       
       <script src="script.js"></script>
     </body>
