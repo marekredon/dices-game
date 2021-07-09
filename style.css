@@ -37,8 +37,9 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   text-align: center;
   border: 4mm ridge rgba(170, 50, 220, 0.6);
 }
@@ -83,6 +84,7 @@ button, a {
   outline: inherit;
   font-size: 3vh;
   text-decoration: none;
+  color: red;
 }
 
 aside {
@@ -92,7 +94,7 @@ aside {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   position: absolute;
-  top: 43%;
+  top: 44%;
   width: 100%;
 }
 
@@ -118,8 +120,9 @@ video {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     background-color: #f04c4c;
     width: 150px;
     height: 8vw;
@@ -132,24 +135,69 @@ video {
         -ms-flex-align: center;
             align-items: center;
     position: absolute;
-    top: 35%;
+    top: 30%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     left: 35%;
     width: 30vw;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   #btn-roll {
+    margin-bottom: 100px;
     top: 50%;
     left: 115%;
   }
   #btn-hold {
-    position: absolute;
     top: 130%;
+    margin-top: 100px;
+  }
+  button, a {
+    font-size: 2.5vw;
   }
   video {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     visibility: hidden;
+    width: 200px;
+    height: 175px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #btn-roll {
+    margin-bottom: 50px;
+  }
+  #btn-hold {
+    margin-top: 50px;
+  }
+  video {
+    width: 250px;
+    height: 205px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  #btn-roll {
+    margin-bottom: 0px;
+  }
+  #btn-hold {
+    margin-top: 0px;
+  }
+  video {
+    width: 300px;
+    height: 230px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  video {
+    width: 400px;
+    height: 300px;
   }
 }
 /*# sourceMappingURL=style.css.map */

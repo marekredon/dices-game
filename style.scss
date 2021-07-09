@@ -5,6 +5,7 @@ $active: #D394DB;
 $lightgrey: #e0e0e0;
 $current: #f04c4c;
 $white:#FFFFFF;
+$red:red;
 
 * {
   font-family: "Lato", sans-serif;
@@ -34,7 +35,7 @@ main {
   background: $active;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   text-align: center;
   border: 4mm ridge rgba(170, 50, 220, .6);
   p{
@@ -57,7 +58,6 @@ main {
   }
 }
 
-
 #currentScoreOne, #currentScoreTwo {
   margin: 0;
   color: $white; 
@@ -74,15 +74,16 @@ button, a {
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
-  font-size: 3vh; //taille des icônes également
+  font-size: 3vh; //joue sur la taille des icônes également
   text-decoration: none;
+  color: $red;
 } 
 
 aside {
   display: flex;
   justify-content: space-around;
   position: absolute;
-  top: 43%;
+  top: 44%;
   width: 100%;
 }
 
@@ -101,37 +102,70 @@ video {
   .current {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: $current;
     width: 150px;
     height: 8vw;
-    
   }
   aside {
     display: flex;
     align-items: center;
     position: absolute;
-    top: 35%;
+    top: 30%;
     flex-direction: column;
     left: 35%;
     width: 30vw;
+    justify-content: space-between;
   }
-
-  // video {
-  //   visibility: hidden;
-  //   width: 400px;
-  //   height: 350px;
-  // }
   #btn-roll {
-  
+    margin-bottom: 100px; //permet de réguler la hauteur de aside
     top: 50%;
     left: 115%;
   }
   #btn-hold {
-    position: absolute;
     top: 130%;
+    margin-top: 100px; // idem que ligne 121
+  }
+  button, a {
+    font-size: 2.5vw; // joue sur la largeur : contraire que le mobile (en vh)
   }
   video {
+    display: flex;
     visibility: hidden;
+    width: 200px;
+    height: 175px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #btn-roll {
+    margin-bottom: 50px; //permet de réguler la hauteur de aside
+  }
+  #btn-hold {
+    margin-top: 50px; // idem que ligne 121
+  }
+  video {
+    width: 250px;
+    height: 205px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  #btn-roll {
+    margin-bottom: 0px; //permet de réguler la hauteur de aside
+  }
+  #btn-hold {
+    margin-top: 0px; // idem que ligne 121
+  }
+  video {
+    width: 300px;
+    height: 230px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  video {
+    width: 400px;
+    height: 300px;
   }
 }
