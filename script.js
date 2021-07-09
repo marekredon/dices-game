@@ -1,7 +1,7 @@
 /* On sélectionne la vidéo */
 const video = document.querySelector('video');
 /* On sélectionne le bouton "video" */
-const btnVideo = document.getElementById('btn-send');
+const btnVideo = document.getElementById('btn-roll');
 
 /* Au clic*/ 
 btnVideo.addEventListener('click', () => {

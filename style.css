@@ -85,6 +85,12 @@ aside {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  position: absolute;
+  top: 45%;
+}
+
+video {
+  visibility: hidden;
 }
 
 @media screen and (min-width: 705px) {
@@ -92,6 +98,27 @@ aside {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  .player {
+    height: 88.5vh;
+    width: 100vw;
+  }
+  .player .current {
+    background-color: #f04c4c;
+    width: 150px;
+    height: 100px;
+    position: relative;
+  }
+  #btn-roll {
+    top: 50%;
+    left: 115%;
+  }
+  #btn-hold {
+    position: absolute;
+    top: 130%;
+  }
+  video {
+    visibility: hidden;
   }
 }
 /*# sourceMappingURL=style.css.map */

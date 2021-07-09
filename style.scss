@@ -85,10 +85,49 @@ button, a {
 aside {
   display: flex;
   justify-content: space-around;
+  position: absolute;
+  top: 45%;
+}
+
+video {
+  visibility: hidden;
 }
 
 @media screen and (min-width: 705px) {
   main{
   display: flex;
+  }
+  .player{
+    height: 88.5vh;
+    width: 100vw;
+  }
+  .player .current {
+    background-color: $current;
+    width: 150px;
+    height: 100px;
+    position: relative;
+  }
+  // aside {
+  //   display: flex;
+  //   justify-content: space-evenly;
+  //   position: absolute;
+  //   top: 45%;
+  // }
+  // video {
+  //   visibility: hidden;
+  //   width: 400px;
+  //   height: 350px;
+  // }
+  #btn-roll {
+    // position: relative;
+    top: 50%;
+    left: 115%;
+  }
+  #btn-hold {
+    position: absolute;
+    top: 130%;
+  }
+  video {
+    visibility: hidden;
   }
 }
