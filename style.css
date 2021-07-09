@@ -4,12 +4,8 @@
   font-weight: 400;
 }
 
-html, body, h1 {
+html, body, h1, h2 {
   margin: 0;
-}
-
-h1 {
-  padding-top: 2em;
 }
 
 .header {
@@ -28,9 +24,21 @@ main {
 }
 
 .player {
-  width: 92vw;
-  height: 46vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 95vw;
+  height: 43vh;
   background: #D394DB;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   text-align: center;
   border: 4mm ridge rgba(170, 50, 220, 0.6);
 }
@@ -54,8 +62,6 @@ main {
   background-color: #f04c4c;
   width: 20vw;
   height: 100px;
-  margin-left: 39.3%;
-  margin-top: 1%;
 }
 
 #currentScoreOne, #currentScoreTwo {
@@ -75,7 +81,7 @@ button, a {
   font: inherit;
   cursor: pointer;
   outline: inherit;
-  font-size: 2em;
+  font-size: 3vh;
   text-decoration: none;
 }
 
@@ -86,14 +92,15 @@ aside {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   position: absolute;
-  top: 45%;
+  top: 43%;
+  width: 100%;
 }
 
 video {
   visibility: hidden;
 }
 
-@media screen and (min-width: 705px) {
+@media screen and (min-width: 750px) {
   main {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -101,13 +108,37 @@ video {
   }
   .player {
     height: 88.5vh;
-    width: 100vw;
+    width: 50vw;
   }
-  .player .current {
+  .current {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     background-color: #f04c4c;
     width: 150px;
-    height: 100px;
-    position: relative;
+    height: 8vw;
+  }
+  aside {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    top: 35%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    left: 35%;
+    width: 30vw;
   }
   #btn-roll {
     top: 50%;

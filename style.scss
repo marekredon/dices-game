@@ -11,12 +11,8 @@ $white:#FFFFFF;
   font-weight: 400;
 }
 
-html, body, h1 {
+html, body, h1, h2 {
   margin : 0
-}
-
-h1 {
-  padding-top: 2em;
 }
 
 .header {
@@ -32,12 +28,13 @@ main {
 }
 
 .player{
-  width: 92vw;
-  height: 46vh;
+  display:flex; 
+  width: 95vw;
+  height: 43vh;
   background: $active;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   text-align: center;
   border: 4mm ridge rgba(170, 50, 220, .6);
   p{
@@ -47,24 +44,23 @@ main {
   h2{
     font-size: 1.2em;
     font-weight: 500;
+  
   }
   &.non-active{
     background: $lightgrey;
     border: 4mm ridge rgba(256, 256, 256, .0);
   }
+  .current {
+    background-color: $current;
+    width: 20vw;
+    height: 100px;
+  }
 }
 
-.player .current {
-  background-color: $current;
-  width: 20vw;
-  height: 100px;
-  margin-left: 39.3%;
-  margin-top: 1%;
-}
 
 #currentScoreOne, #currentScoreTwo {
   margin: 0;
-  color: $white;
+  color: $white; 
 }
 #globalScoreOne, #globalScoreTwo {
   margin: 0;
@@ -78,7 +74,7 @@ button, a {
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
-  font-size: 2em;
+  font-size: 3vh; //taille des icônes également
   text-decoration: none;
 } 
 
@@ -86,40 +82,48 @@ aside {
   display: flex;
   justify-content: space-around;
   position: absolute;
-  top: 45%;
+  top: 43%;
+  width: 100%;
 }
 
 video {
   visibility: hidden;
 }
 
-@media screen and (min-width: 705px) {
+@media screen and (min-width: 750px) {
   main{
   display: flex;
   }
   .player{
     height: 88.5vh;
-    width: 100vw;
+    width: 50vw;
   }
-  .player .current {
+  .current {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     background-color: $current;
     width: 150px;
-    height: 100px;
-    position: relative;
+    height: 8vw;
+    
   }
-  // aside {
-  //   display: flex;
-  //   justify-content: space-evenly;
-  //   position: absolute;
-  //   top: 45%;
-  // }
+  aside {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 35%;
+    flex-direction: column;
+    left: 35%;
+    width: 30vw;
+  }
+
   // video {
   //   visibility: hidden;
   //   width: 400px;
   //   height: 350px;
   // }
   #btn-roll {
-    // position: relative;
+  
     top: 50%;
     left: 115%;
   }
