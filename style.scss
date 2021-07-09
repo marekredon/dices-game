@@ -2,8 +2,9 @@
 
 //couleurs
 $active: #D394DB;
-$darkgrey: #e0e0e0;
+$lightgrey: #e0e0e0;
 $current: #f04c4c;
+$white:#FFFFFF;
 
 * {
   font-family: "Lato", sans-serif;
@@ -27,7 +28,7 @@ h1 {
 }
 
 main {
-  display: inline-block;
+  display:block;
 }
 
 .player{
@@ -48,30 +49,24 @@ main {
     font-weight: 500;
   }
   &.non-active{
-    background: $darkgrey;
+    background: $lightgrey;
     border: 4mm ridge rgba(256, 256, 256, .0);
   }
 }
 
-.player .current{
+.player .current {
   background-color: $current;
   width: 20vw;
   height: 100px;
   margin-left: 39.3%;
   margin-top: 1%;
-  &currentScoreOne {
-    margin: 0;
-    color: #e0e0e0;
- }
-  &globalScoreOne{
-    margin: 0;
-  }
 }
+
 #currentScoreOne, #currentScoreTwo {
   margin: 0;
-  color: #e0e0e0;
+  color: $white;
 }
-#globalScoreTwo, #globalScoreOne{
+#globalScoreOne, #globalScoreTwo {
   margin: 0;
 }
 
@@ -93,7 +88,7 @@ aside {
 }
 
 @media screen and (min-width: 705px) {
-  #player2.player.non-active {
-  display: inline-block;
+  main{
+  display: flex;
   }
 }

@@ -24,7 +24,7 @@ h1 {
 }
 
 main {
-  display: inline-block;
+  display: block;
 }
 
 .player {
@@ -58,21 +58,12 @@ main {
   margin-top: 1%;
 }
 
-.player .currentcurrentScoreOne {
-  margin: 0;
-  color: #e0e0e0;
-}
-
-.player .currentglobalScoreOne {
-  margin: 0;
-}
-
 #currentScoreOne, #currentScoreTwo {
   margin: 0;
-  color: #e0e0e0;
+  color: #FFFFFF;
 }
 
-#globalScoreTwo, #globalScoreOne {
+#globalScoreOne, #globalScoreTwo {
   margin: 0;
 }
 
@@ -97,8 +88,10 @@ aside {
 }
 
 @media screen and (min-width: 705px) {
-  #player2.player.non-active {
-    display: inline-block;
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 /*# sourceMappingURL=style.css.map */
