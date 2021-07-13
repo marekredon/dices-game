@@ -8,13 +8,30 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link href="style.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
       <script src="https://kit.fontawesome.com/f7576231fa.js" crossorigin="anonymous"></script>
+      <!--<link href="reset.css" rel="stylesheet">  sur conseil de Joshua -->
     </head>
 
     <body>
       
       <div class="header">
-      <button type="button">NEW GAME &nbsp&nbsp<i class="fas fa-redo-alt fa-1x"></i></button>
-      <a href="rules.html" button type="button">RULES &nbsp&nbsp<i class="fab fa-readme fa-1x"></i></button></a> 
+        <button type="button">NEW GAME &nbsp&nbsp<i class="fas fa-redo-alt fa-1x"></i></button>
+      <!-- fenêtre modale des règles-->
+        <a href="#demo">RULES &nbsp&nbsp<i class="fab fa-readme fa-1x"></i></a>
+          <div id="demo" class="modal">
+            <div class="modal_content">
+              <h2>Règles :</h2>
+              <p>  Deux joueurs s'amusent aux lancers d'un dé à 6 faces. <br>
+                  Chaque joueur possède un score actuel (ROUND) et un score global (GLOBAL) débutant à 0.<br>
+                  À chaque tour, le joueur a son ROUND initialisé à 0 et peut lancer un dé autant de fois qu'il le souhaite.<br>
+                  Le résultat d’un lancer est ajouté au ROUND.<br><br>
+                  Lors de son tour, le joueur actif peut décider de:<br>
+                    - cliquer sur HOLD, ce qui permet d’envoyer les points du ROUND vers le GLOBAL. Ce sera alors le tour de l’autre joueur de jouer.<br>
+                    - lancer ou relancer le dé. S’il obtient un 1, son score ROUND est perdu et c’est la fin de son tour.<br><br>
+                  Le premier joueur qui atteint ou dépasse les 100 points sur GLOBAL gagne la partie.
+              </p>
+              <a href="#" class="modal_close">&times;</a>
+            </div>
+          </div>
       </div>
 
       <main>
