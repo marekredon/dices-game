@@ -1,37 +1,32 @@
-/* On sélectionne la vidéo */
+// On sélectionne la vidéo 
 const video = document.querySelector('video');
-/* On sélectionne le bouton "video" */
+// On sélectionne la source
+const source = document.querySelector('source')
+// on selectionne le bouton roll
 const btnVideo = document.getElementById('btn-roll');
-/* Au clic*/ 
+// Au clic
 btnVideo.addEventListener('click', () => {
-/* On affiche la video */
- video.style.visibility = 'visible';
-/* La video est lancée */
-  dice();
+
+//liste des vidéos
+let faces = ["videos/de1.mp4", "videos/de2.mp4", "videos/de3.mp4", "videos/de4.mp4","videos/de5.mp4","videos/de6.mp4"];
+
+// fonction donnant un chiffre aléatoire entre 0 et 5. cela permet de charger la vidéo correspondant au dé 
+// sachant que 0 equivaut au dé 1 et 5 au dé 6 car le premier emplacement du tableau est l'emplacement 0.
+let valueDice = Math.floor(Math.random() * faces.length);
+
+//On affecte l'emplacement de la vidéo à point dice en fonction du lancer de dé
+let pointsDice = faces[valueDice];
+
+//On modifie la source de la vidéo grace a pointsDice
+source.setAttribute('src', pointsDice)
+  /* La video est chargée */
+  video.load();
+  /* La video est lancée */
   video.play();
 });
-/* A la fin de la video, on peut cacher la video avec */
-// video.onended = () => {
-//  video.style.visibility = 'hidden';
-// }
 
-
-// const roll = document.getElementById('btn-roll'); ligne à supprimer
-let faces = ["videos/1.mp4", "videos/2.mp4", "videos/3.mp4", "videos/4.mp4","videos/5.mp4","videos/6.mp4"];
-
-// fonction donnant un chiffre aléatoire entre 1 et 6 et associé au dé
-const dice = () => {
-  let valueDice = Math.floor(Math.random() * faces.length);
-  let pointsDice = faces.indexOf(faces[dice]) + 1;
-// affichage des videos correspondantes
-//lignes à supprimer ci-dessous
-// }
-// roll.addEventListener('click', dice);
-
-};
-  
-
-
-
-
-
+ /* A la fin de la video, on peut cacher la video avec
+ video.onended = () => {
+ video.style.visibility = 'hidden';
+ }
+  */
