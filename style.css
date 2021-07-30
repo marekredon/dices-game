@@ -33,6 +33,7 @@ html, body, h1, h2 {
   bottom: 0;
   left: 0;
   right: 0;
+  height: 50%;
   background: rgba(77, 87, 87, 0.7);
   display: -webkit-box;
   display: -ms-flexbox;

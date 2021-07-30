@@ -5,6 +5,7 @@ const video = document.querySelector('video');
 const source = document.querySelector('source')
 // on selectionne le bouton roll
 const btnVideo = document.getElementById('btn-roll');
+
 // Variables
 let activePlayer = player1;
 let currentP1 = document.getElementById('currentScoreOne');
@@ -46,7 +47,7 @@ btnVideo.addEventListener('click', () => {
 });
 
 const changePlayer = () => {
-	activePlayer.classList.remove("active");
+  activePlayer.classList.remove("active");
 	activePlayer.classList.add("non-active");
 	activePlayer = activePlayer == player1 ? player2 : player1;
 	activePlayer.classList.remove("non-active");
@@ -54,4 +55,43 @@ const changePlayer = () => {
 }
 
 
- // 2. Bouton NEW GAME
+ // 2. Bouton HOLD DICE +  Fin de partie
+ let globalP1 = document.getElementById('globalScoreOne');
+ let globalP2 = document.getElementById('globalScoreTwo');
+ const hold = document.getElementById('btn-hold');
+ let result = document.getElementById('result');
+ 
+
+ const holdDice = () => {
+	if (activePlayer == player1) {
+		globalP1.textContent = parseInt(globalP1.textContent) + parseInt(currentP1.textContent);
+		currentP1.textContent =  0;
+		globalP1.textContent >= 10 ? endGame(): changePlayer();
+	} else {
+		globalP2.textContent = parseInt(globalP2.textContent) + parseInt(currentP2.textContent);
+		currentP2.textContent =  0;
+		globalP2.textContent >= 10 ? endGame(): changePlayer();
+	} 
+}
+
+const endGame = () => {
+	activePlayer = (activePlayer == player1) ? player1 : player2;
+	result.innerHTML = "<h1>"+ (activePlayer == player1 ? player1.id : player2.id) +" a gagné!!!!!</h1>";
+}
+
+hold.addEventListener('click', holdDice);
+
+
+// 3. Bouton NEW GAME
+let newGame = document.getElementById('btn-new');
+
+const zero = () => {
+	if (confirm("Nouvelle partie?") == true) {
+	  globalP1.textContent = "0";
+	  globalP2.textContent = "0";
+	  currentP1.textContent = "0";
+	  currentP2.textContent = "0";
+	}
+}
+
+newGame.addEventListener("click", zero);
