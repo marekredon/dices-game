@@ -91,6 +91,7 @@ const zero = () => {
 	  globalP2.textContent = "0";
 	  currentP1.textContent = "0";
 	  currentP2.textContent = "0";
+		activePlayer = player1;
 	}
 }
 
