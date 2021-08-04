@@ -55,28 +55,31 @@ const changePlayer = () => {
 }
 
 
- // 2. Bouton HOLD DICE +  Fin de partie
+ // 2. Bouton HOLD DICE
  let globalP1 = document.getElementById('globalScoreOne');
  let globalP2 = document.getElementById('globalScoreTwo');
  const hold = document.getElementById('btn-hold');
  let result = document.getElementById('result');
- 
+ const winModal = document.getElementById('fin'); // appel de la modale de fin
+ const closeModal = document.getElementById('closeModal');
 
  const holdDice = () => {
 	if (activePlayer == player1) {
 		globalP1.textContent = parseInt(globalP1.textContent) + parseInt(currentP1.textContent);
 		currentP1.textContent =  0;
-		globalP1.textContent >= 10 ? endGame(): changePlayer();
+		globalP1.textContent >= 5 ? endGame(): changePlayer();
 	} else {
 		globalP2.textContent = parseInt(globalP2.textContent) + parseInt(currentP2.textContent);
 		currentP2.textContent =  0;
-		globalP2.textContent >= 10 ? endGame(): changePlayer();
+		globalP2.textContent >= 5 ? endGame(): changePlayer();
 	} 
 }
 
+ // Fin de partie
 const endGame = () => {
 	activePlayer = (activePlayer == player1) ? player1 : player2;
-	result.innerHTML = "<h1>"+ (activePlayer == player1 ? player1.id : player2.id) +" a gagné!!!!!</h1>";
+	 result.innerHTML = "<h1>"+ (activePlayer == player1 ? player1.id : player2.id) +" a gagné !</h1>";
+	 endGame.style.display = 'hidden';
 }
 
 hold.addEventListener('click', holdDice);
@@ -86,12 +89,14 @@ hold.addEventListener('click', holdDice);
 let newGame = document.getElementById('btn-new');
 
 const zero = () => {
-	if (confirm("Nouvelle partie?") == true) {
+	if (confirm("Nouvelle partie?") == true) {   //modal qui s'éxécute avant de renouveler la partie (pas obligé)
 	  globalP1.textContent = "0";
 	  globalP2.textContent = "0";
 	  currentP1.textContent = "0";
 	  currentP2.textContent = "0";
-		activePlayer = player1;
+		if (activePlayer == player2) {
+			changePlayer()
+		};
 	}
 }
 
