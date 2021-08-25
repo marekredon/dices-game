@@ -124,6 +124,10 @@ video {
   visibility: hidden;
 }
 
+.modalWinner {
+  display: none; 
+}
+
 @media screen and (min-width: 750px) {
   main{
   display: flex;

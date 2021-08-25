@@ -60,26 +60,26 @@ const changePlayer = () => {
  let globalP2 = document.getElementById('globalScoreTwo');
  const hold = document.getElementById('btn-hold');
  let result = document.getElementById('result');
- const winModal = document.getElementById('fin'); // appel de la modale de fin
+ const winModal = document.getElementById('winModal'); // appel de la modale de fin
  const closeModal = document.getElementById('closeModal');
 
  const holdDice = () => {
 	if (activePlayer == player1) {
 		globalP1.textContent = parseInt(globalP1.textContent) + parseInt(currentP1.textContent);
 		currentP1.textContent =  0;
-		globalP1.textContent >= 100 ? endGame(): changePlayer();
+		globalP1.textContent >= 10 ? endGame(): changePlayer();
 	} else {
 		globalP2.textContent = parseInt(globalP2.textContent) + parseInt(currentP2.textContent);
 		currentP2.textContent =  0;
-		globalP2.textContent >= 100 ? endGame(): changePlayer();
+		globalP2.textContent >= 10 ? endGame(): changePlayer();
 	} 
 }
 
  // Fin de PARTIE
 const endGame = () => {
 	activePlayer = (activePlayer == player1) ? player1 : player2;
-	 result.innerHTML = "<h1>"+ (activePlayer == player1 ? player1.id : player2.id) +" a gagné !</h1>";
-	 endGame.style.display = 'hidden';
+	 winner.innerHTML = (activePlayer == player1 ? player1.id : player2.id) +" a gagné !";
+	 winModal.style.display = "block"; 
 }
 
 hold.addEventListener('click', holdDice);
@@ -94,6 +94,7 @@ const zero = () => {
 	  globalP2.textContent = "0";
 	  currentP1.textContent = "0";
 	  currentP2.textContent = "0";
+		winModal.style.display = "none";
 		if (activePlayer == player2) {
 			changePlayer()
 		};
@@ -101,3 +102,14 @@ const zero = () => {
 }
 
 newGame.addEventListener("click", zero);
+
+// 4 modale de winner
+const winner = document.getElementById('winner');
+
+closeModal.onclick = () => {
+	winModal.style.display = "none"; 
+}
+
+window.onclick = (event) => {
+	if (event.target == winModal) winModal.style.display = "none"; 
+}
