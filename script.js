@@ -79,7 +79,7 @@ const changePlayer = () => {
 const endGame = () => {
 	activePlayer = (activePlayer == player1) ? player1 : player2;
 	 winner.innerHTML = (activePlayer == player1 ? player1.id : player2.id) +" a gagné !";
-	 winModal.style.display = "block"; 
+	 winModal.style.display = "flex"; 
 }
 
 hold.addEventListener('click', holdDice);
