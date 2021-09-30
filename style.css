@@ -88,6 +88,7 @@ html, body, h1, h2 {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
+  font-size: 0.5rem;
 }
 
 main {
@@ -237,6 +238,9 @@ video {
     width: 200px;
     height: 175px;
   }
+  .modalWinner_content {
+    font-size: 0.8rem;
+  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -249,6 +253,9 @@ video {
   video {
     width: 250px;
     height: 205px;
+  }
+  .modalWinner_content {
+    font-size: 1rem;
   }
 }
 
@@ -263,12 +270,18 @@ video {
     width: 300px;
     height: 230px;
   }
+  .modalWinner_content {
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (min-width: 1600px) {
   video {
     width: 400px;
     height: 300px;
+  }
+  .modalWinner_content {
+    font-size: 1.4rem;
   }
 }
 /*# sourceMappingURL=style.css.map */

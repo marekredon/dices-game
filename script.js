@@ -67,11 +67,11 @@ const changePlayer = () => {
 	if (activePlayer == player1) {
 		globalP1.textContent = parseInt(globalP1.textContent) + parseInt(currentP1.textContent);
 		currentP1.textContent =  0;
-		globalP1.textContent >= 10 ? endGame(): changePlayer();
+		globalP1.textContent >= 100 ? endGame(): changePlayer();
 	} else {
 		globalP2.textContent = parseInt(globalP2.textContent) + parseInt(currentP2.textContent);
 		currentP2.textContent =  0;
-		globalP2.textContent >= 10 ? endGame(): changePlayer();
+		globalP2.textContent >= 100 ? endGame(): changePlayer();
 	} 
 }
 

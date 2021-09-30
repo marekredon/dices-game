@@ -74,6 +74,7 @@ html, body, h1, h2 {
       border-radius: 30px;
       display: flex;
       align-items: baseline;
+      font-size: 0.5rem;
     }
     // &_close {
     //   position: absolute; 
@@ -148,6 +149,9 @@ video {
   visibility: hidden;
 }
 
+
+
+
 @media screen and (min-width: 750px) {
   main{
   display: flex;
@@ -192,6 +196,12 @@ video {
     width: 200px;
     height: 175px;
   }
+  .modalWinner {
+    &_content { 
+      font-size: 0.8rem;
+    }
+  }
+
 }
 
 @media screen and (min-width: 1000px) {
@@ -204,6 +214,11 @@ video {
   video {
     width: 250px;
     height: 205px;
+  }
+  .modalWinner {
+    &_content { 
+      font-size: 1rem;
+    }
   }
 }
 
@@ -218,11 +233,21 @@ video {
     width: 300px;
     height: 230px;
   }
+  .modalWinner {
+    &_content { 
+      font-size: 1.2rem;
+    }
+  }
 }
 
 @media screen and (min-width: 1600px) {
   video {
     width: 400px;
     height: 300px;
+  }
+  .modalWinner {
+    &_content { 
+      font-size: 1.4rem;
+    }
   }
 }
